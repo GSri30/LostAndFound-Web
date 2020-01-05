@@ -1,0 +1,32 @@
+{%include 'base.html'%}
+{%include 'header.html'%}
+{% load static %}
+
+<div class="list1 common">
+    <p><u><b>ITEM_TITLE</b></u></p>
+    <p> {{data.product_title}}</p>
+    <p><u><b>PLACE</b></u></p>
+    <p>{{data.place}}</p>
+    <p><u><b>DATE</b></u></p>
+    <p>{{data.date}}</p>
+    <p><u><b>TIME</b></u></p>
+    <p>{{data.time}}</p>
+    <p><u><b>ITEM_DESCRIPTION</b></u></p>
+    <p>{{data.description}}</p>
+    <p><u><b>CONTACT</b></u></p>
+    <p>{{data.contactme}}</p>
+    
+    <!--{%for data1 in objectpic%}
+        {% if data1.user == data.username %}
+            <img src="{{ data1.user.profile.image.url }}" alt="img">
+        {% endif %}
+    {%endfor%}-->
+   
+    <!-- {% if data.username != '' %}
+        <p style="text-align: right; padding-right: 1%; color: rgb(1, 65, 1);">Found by {{data.username}}</p>
+    {%else%}
+        <p style="text-align: right; padding-right: 1%; color: rgb(1, 65, 1);">Found by #Anonymous</p>
+    {% endif %} -->
+</div>
+<br>
+<a href="delete/" class="smalllinks">Found this?</a>

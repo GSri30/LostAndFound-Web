@@ -1,0 +1,27 @@
+{%include 'base.html'%}
+{% include 'header.html' %}
+{% if messages %}
+    <div class="message">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+{% endif %}
+<br>
+<br>
+
+<div><img class="profile-img" src="{{ user.profile.image.url }}" onclick="window.location.href='update/'"></div>
+
+<div class="profile-heading">
+    <h2 style="margin-bottom: 3px; color: #1f1209;">{{ user.username }}</h2>
+    <p style="text-align: center;margin-top: 0;font-family: Andale Mono, monospace;font-size: 140%;">{{  user.email }}</p>
+</div>
+<br>
+<div style="text-align: center;margin-top: 4%;">
+    <button class="buttonp" onclick="window.location.href = 'my_lost_things/'" >Things you lost</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="buttonp" onclick="window.location.href = 'my_found_things/'" >Things you found</button>
+</div>
+<div style="text-align: center;">
+    <button class="buttonp" onclick="window.location.href='update/'" id="buttonp">Edit profile</button>
+</div>
+{% include 'footer.html' %}

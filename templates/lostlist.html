@@ -1,0 +1,65 @@
+{%include 'base.html'%}
+{%include 'header.html'%}
+<div style="padding-bottom: 780px;">
+    {%for data in object%}
+        <div class="list common">
+            <p><u><b>ITEM_TITLE</b></u></p>
+            <p> {{data.product_title}}</p>
+            <p><u><b>PLACE</b></u></p>
+            <p>{{data.place}}</p>
+            <p><u><b>DATE</b></u></p>
+            <p>{{data.date}}</p>
+            <p><u><b>TIME</b></u></p>
+            <p>{{data.time}}</p>
+            <p><u><b>ITEM_DESCRIPTION</b></u></p>
+            <p>{{data.description}}</p>
+            <p><u><b>CONTACT</b></u></p>
+            <p>{{data.contactme}}</p>
+            
+            {%for data1 in objectpic%}
+                {% if data1.user == data.username %}
+                    <img src="{{ data1.user.profile.image.url }}" alt="img">
+                {% endif %}
+            {%endfor%}
+
+            {%if data.username != ''%}
+            <p style="text-align: right; padding-right: 1%; color: rgb(129, 4, 4); ">Lost by {{data.username}}</p>
+            {%else%}
+            <p style="text-align: right; padding-right: 1%; color: rgb(129, 4, 4);">Lost by #Anonymous</p>
+            {%endif%}
+        </div>
+    {%endfor%}
+
+    {% if object.has_previous %}
+        <a href="?page=1" class="pagenumslinks" style="margin-left: 40%;">First</a>
+        <a href="?page={{ object.previous_page_number }}" class="pagenumslinks">Previous</a>
+    {% endif %}
+
+    {% for num in object.paginator.page_range %}
+        {% if object.number == num %}
+            {% if not object.has_previous %}
+                <a class="current" href="?page={{ num }}" style="margin-left: 45%;">{{ num }}</a>
+            {% else %}
+                <a class="current" href="?page={{ num }}">{{ num }}</a>
+            {% endif %}
+        {% elif num > object.number|add:'-3' and num < object.number|add:'3' %}
+            <a href="?page={{ num }}" class="pagenums">{{ num }}</a>
+        {% endif %}
+    {% endfor %}
+
+    {% if object.has_next %}
+        <a href="?page={{ object.next_page_number }}" class="pagenumslinks">Next</a>
+        <a href="?page={{ object.paginator.num_pages }}" class="pagenumslinks">Last</a>
+    {% endif %}
+    
+</div>
+
+<!--
+    {{ object.paginator.count }}
+    {{ object.paginator.num_pages }}
+    {{ object.paginator.page_range }}
+    {{ object.has_previous }}
+    {{ object.has_next }}
+-->
+
+{% include 'footer.html' %}

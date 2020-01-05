@@ -1,0 +1,11 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+<div style="padding-bottom: 180px;">
+    <p style="font-size: 80;color: green;margin-top: 100;text-align: center;font-family: Arial Narrow, sans-serif;margin-bottom: 0;">You have been logged out successfully!</p>
+    <p style="text-align: center;font-family:Bradley Hand, cursive;font-size: 60;color: rgb(5, 71, 5);margin-top: 0;margin-bottom: 100;font-weight: 500">Thanks for visiting us!</p>
+    <a href="/login/" style="margin-left: 850;font-size: 30;margin-bottom: 20;">Login again?</a>
+    <p><a href="{% url 'home' %}" style="margin-left: 900;font-size: 30;">Home</a></p>
+</div>
+
+
+

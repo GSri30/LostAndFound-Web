@@ -1,0 +1,22 @@
+{% load static %}
+<header><div class="border">
+    <a href="https://www.iiitb.ac.in/" target="_blank">
+    <img src="{% static '/css/images/IIIT-B_logo.png' %}" alt="IIIT-B_logo" class="icon" width=70px align="left" ></a>
+    <!--<a href="https://zense.co.in/" target="_blank"><img src="{% static '/css/images/zense.png' %}" alt="zense_logo" width="50px" style="margin-left:1%;padding-bottom: 0%;"class="icon"</a>-->
+    <a href="/">
+        <img src="{%static '/css/images/home.png'%}" alt="home-icon" class="icon" width="50px" align="left" style="margin-left:1%;padding-bottom: 0%;"></a>   
+    
+    <div align="right">
+        {% if user.is_authenticated %}
+            <!--<a href="/profile/" class="links" style="color: aliceblue;">Profile</a> &nbsp;&nbsp;-->
+            <a href="/profile/" style="margin-bottom: 0%;"><img src="{{ user.profile.image.url }}" alt="profile" width="40px" class="icon" style="border: 1px solid white;border-radius: 20px;background-color: aliceblue;"></a>&nbsp;&nbsp;
+            <a href="/logout/" class="links" style="color: aliceblue;">Logout</a> &nbsp;&nbsp;
+            
+        {% else %}
+            <a href="/login/" class="links" style="color: aliceblue;">Login</a> &nbsp;&nbsp;
+            <a href="/register/" class="links" style="color: aliceblue;">Register</a> &nbsp;&nbsp;
+            <br><br><br>
+        {% endif %}
+    </div>
+    </div>
+</header>

@@ -1,0 +1,49 @@
+{% load static %}
+{% include 'base.html' %}
+    <body>
+        <div class="container">
+        {% include 'header.html' %}  
+
+        {% if messages %}
+            <div class="message">
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+            </div>
+        {% endif %}
+    
+        <main>
+            
+            <div class="TextBox"><h1 class="h1">Ne perd rien!</h1>
+            <p class="subtag"><i>simply Don't lose anything..</i> </p></div>
+            <button id="btnScrollToBottom">
+                <i class="material-icons">arrow_downwards</i>
+            </button>
+            <script>
+                const btnScrollToBottom=document.querySelector("#btnScrollToBottom");
+                btnScrollToBottom.addEventListener("click",function(){
+                    $("html, body").animate({ scrollTop: $(document).height()-$(window).height() },"slow");
+                });
+            </script>
+            <hr/>
+            </div >
+                <h2 style=font-size:61px>Lost anything?</h2>
+                <p class="one"><i>No worries..we are here!</i></p>
+                <br/><div align="center"><button class="button" onclick="window.location.href = '/reportLost/'" >Report Lost</button></div>
+                <br><div align="center" class="sublink"><a href="/foundList/">Check what people found</a></div><br> 
+                
+                <h2 style=font-size:61px>Found anything?</h2>
+                <p class="one"><i>Keep Going!</i></p>
+                <br/><div align="center"><button class="button" onclick="window.location.href = '/reportFound/'" >Report Found</button></div>
+                <br><div align="center" class="sublink"><a href="/lostlist/">Check what people lost</a></div>
+                <br>
+                
+
+                <br>
+                <br>
+            </div>            
+        </main>
+        
+        {% include 'footer.html' %}
+    </body>
+

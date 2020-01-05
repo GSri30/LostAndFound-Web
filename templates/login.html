@@ -1,0 +1,28 @@
+{% include 'base.html'%}
+
+{% if messages %}
+    <div class="message">
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+    </div>
+{% endif %}
+<div class="box">
+    <h1 id="logreg">Login</h1>
+    <div class="loginform">
+        <form method="POST">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit" class="log">Login</button>
+        </form>
+        <div id="login-or">
+            <hr id="hr-or">
+            <span id="span-or">or</span>
+        </div>
+        <p>
+            Don't have an account ? <a href="/register" style="font-weight: 600;">Sign up here</a>
+        </p>
+    </div>
+</div>

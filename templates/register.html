@@ -1,0 +1,20 @@
+{%include 'base.html'%}
+{% load crispy_forms_tags %}
+
+<div class="box">
+    <h1 id="logreg">Register</h1>
+    <div class="registerform">
+        <form method="POST">
+            {% csrf_token %}
+            {{ formregi|crispy }}
+            <button type="submit" class="log">Sign Up</button>
+        </form>
+        <div id="login-or">
+            <hr id="hr-or">
+            <span id="span-or">or</span>
+        </div>
+        <p>
+            Already have an account ? <a href="/login/" style="font-weight: 600;">Login here</a>
+        </p>
+    </div> 
+</div>

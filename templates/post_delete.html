@@ -1,0 +1,14 @@
+{%include 'base.html'%}
+
+{% include 'header.html'%}
+<div class="box" style="margin-bottom: 19%;">
+{% if object.username == user.username %}
+<form method="POST">
+    {%csrf_token%}
+    <h1 style="font-family: Haettenschweiler, 'Arial Narrow', sans-serif;color: rgb(104, 3, 3);font-size: 300%;text-shadow: 2px 2px #FF0000;margin-top: 0%;"> Delete Post </h1>
+    <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size: 160%;">Are you sure? Do you want to delete "{{object.product_title}}" from the main list?</p>
+    <button type="submit" class="log" style="margin-bottom: 4%;">Delete</button>
+</form>
+{% endif %}
+</div>
+{%include 'footer.html'%}

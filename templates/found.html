@@ -1,0 +1,11 @@
+{%include 'base.html'%}
+{% include 'header.html' %}
+<div class="box" style="font-size: 25px;padding-top: 1%;margin-bottom: 5%;">
+    <form method='post'>
+    {% csrf_token %}
+    {{form1.as_p}}
+    <input type="submit" value='Submit' class="log" style="margin-top:30px ;" />
+    </form> 
+</div>
+
+{% include 'footer.html' %}

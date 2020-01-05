@@ -1,0 +1,30 @@
+{%include 'base.html'%}
+{% load crispy_forms_tags %}
+{% include 'header.html' %}
+
+<br>
+<br>
+
+<div>
+    <img class="profile-img" src="{{ user.profile.image.url }}">
+</div>
+<div class="profile-heading">
+    <h2 style="margin-bottom: 3px; color: #1f1209;margin-top: 0%;">{{ user.username }}</h2>
+    <p style="text-align: center;margin-top: 0;font-family: Andale Mono, monospace;font-size: 140%;">{{  user.email }}</p>
+</div>
+<div class="box" style="margin-top: 0%;margin-bottom: 5%;padding-top: 2px;padding-bottom: 6px;">
+<h3 style="text-align: center;margin-bottom: 1%;font-size: 125%">Edit your information</h3>
+<div style="margin-top: 1%;">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ u_form|crispy }}
+        {{ p_form|crispy }}
+        <br>
+        <br>
+        <button type="submit" class="log">Update</button>
+    </form>
+</div> 
+</div>
+<br>
+<br>
+{% include 'footer.html' %}
