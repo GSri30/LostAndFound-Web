@@ -423,3 +423,14 @@ a.pagenumslinks:hover{
 .smalllinks:hover{
     background-color: #04a104;
 }
+.currently{
+    font-size: 110%;
+    border: 1px solid black;
+    border-radius: 9px;
+    padding: 0.5% 0.5%;
+    margin-left: 40%;
+    background-color: rgb(247, 108, 108);
+}
+.currently:hover{
+    background-color: rgb(241, 75, 75);
+}

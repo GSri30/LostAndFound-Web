@@ -51,20 +51,16 @@ def updateProfile(request):
 def lost(request):
     obj=itemlostfull.objects.all()
     obj1=reversed(obj)
-    objects=itemlost.objects.all()
     context={
         'objectt':obj1,
-        'objects':objects
         }
     return render(request,"lost_specific.html",context)
 @login_required
 def found(request):
     obj=itemfoundfull.objects.all()
     obj1=reversed(obj)
-    objects=itemfound.objects.all()
     context={
         'objectt':obj1,
-        "objects":objects
         }
     return render(request,"found_specific.html",context)
 '''
@@ -101,3 +97,14 @@ def specific_post_view1(request,id):
     obj1=get_object_or_404(itemlost,id=id)
     return render(request,"specific_post_lost.html",{"data":obj1})
 
+def activelost(request):
+    obj=itemlostfull.objects.all()
+    obj1=reversed(obj)
+    objects=itemlost.objects.all()
+    return render(request,"activelost.html",{"objectt":obj1,"objects":objects})
+
+def activefound(request):
+    obj=itemfoundfull.objects.all()
+    obj1=reversed(obj)
+    objects=itemfound.objects.all()
+    return render(request,"activefound.html",{"objectt":obj1,"objects":objects})

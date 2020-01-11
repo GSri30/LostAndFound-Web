@@ -1,6 +1,8 @@
 {%include 'base.html'%}
 {%include 'header.html'%}
 
+<a href="active/" class="currently">Currenty Active</a>
+
 {% if messages %}
     <div class="message">
     {% for message in messages %}
@@ -11,13 +13,12 @@
     </div>
 {% endif %}
 
+
 <div style="padding-bottom: 780px;">
 
 {%for data in objectt%}
     {% if data.username == user.username %}
-        {% for object in objects %}
-            {% if data.id == object.id %}
-            <div class="list common" onclick="window.location.href='/profile/my_lost_things/{{ data.id }}/'">
+            <div class="list common" onclick="window.location.href=''">
                 <p><u><b>ITEM_TITLE</b></u></p>
                 <p> {{data.product_title}}</p>
                 <p><u><b>PLACE</b></u></p>
@@ -32,8 +33,6 @@
                 <p>{{data.contactme}}</p>
                 <br>
             </div>
-            {% endif %}
-        {%endfor%}
     {% endif %}
 {% endfor %}
 </div>

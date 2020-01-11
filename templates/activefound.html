@@ -1,0 +1,30 @@
+{%include 'base.html'%}
+{%include 'header.html'%}
+
+<div style="padding-bottom: 780px;">
+    {%for data in objectt%}
+        {% if data.username == user.username %}
+            {% for object in objects %}
+                {% if data.id == object.id %}
+                <div class="list1 common" onclick="window.location.href = '/profile/my_found_things/active/{{ data.id }}/'">
+                    <p><u><b>ITEM_TITLE</b></u></p>
+                    <p> {{data.product_title}}</p>
+                    <p><u><b>PLACE</b></u></p>
+                    <p>{{data.place}}</p>
+                    <p><u><b>DATE</b></u></p>
+                    <p>{{data.date}}</p>
+                    <p><u><b>TIME</b></u></p>
+                    <p>{{data.time}}</p>
+                    <p><u><b>ITEM_DESCRIPTION</b></u></p>
+                    <p>{{data.description}}</p>
+                    <p><u><b>CONTACT</b></u></p>
+                    <p>{{data.contactme}}</p>
+                    <p style="margin-left: 90%;font-family: 'Times New Roman', Times, serif;color: rgb(1, 95, 1);"><b>Currently Active!</b></p>
+                </div>
+                {% endif %}
+            {%endfor%}
+        {% endif %}
+    {% endfor %}
+</div>
+            
+{% include 'footer.html' %}
