@@ -38,7 +38,7 @@ from users.views import lost
 from users.views import found
 from users.views import updateProfile
 from users.views import post_delete_view,post_delete_view1
-from users.views import specific_post_view,specific_post_view1
+from users.views import specific_post_view,specific_post_view1,activelost,activefound
 #from users.views import PostDeleteView
 
 urlpatterns = [
@@ -69,10 +69,12 @@ urlpatterns = [
     #path('password-reset/',auth_views.PasswordResetView.as_view(template_name='password-reset.html'),name='password_reset'),
     #path('password-reset/done/',auth_views.PasswordResetDoneView.as_view(template_name='password_reset_done.html'),name='password_reset_done'),
     #path('password-reset-confirm/<uidb64>/<token>/',auth_views.PasswordResetConfirmView.as_view(template_name='password_reset_confirm.html'),name='password_reset_confirm'),
-    path('profile/my_found_things/<int:id>/delete/',post_delete_view,name='product-delete-f'),
-    path('profile/my_lost_things/<int:id>/delete/',post_delete_view1,name='product-delete-l'),
-    path('profile/my_found_things/<int:id>/',specific_post_view,name='specific-post-view-f'),
-    path('profile/my_lost_things/<int:id>/',specific_post_view1,name='specific-post-view-l'),
+    path('profile/my_found_things/active/<int:id>/delete/',post_delete_view,name='product-delete-f'),
+    path('profile/my_lost_things/active/<int:id>/delete/',post_delete_view1,name='product-delete-l'),
+    path('profile/my_found_things/active/<int:id>/',specific_post_view,name='specific-post-view-f'),
+    path('profile/my_lost_things/active/<int:id>/',specific_post_view1,name='specific-post-view-l'),
+    path('profile/my_lost_things/active/',activelost,name='lost_specific_active'),
+    path('profile/my_found_things/active/',activefound,name='found_specific_active'),
 ]
 
 if settings.DEBUG:
