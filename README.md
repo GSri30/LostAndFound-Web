@@ -4,12 +4,6 @@
 </p>
 
 > This is my first website made using django. It is a &#34;Lost And Found&#34; website which can be used to either report or view the lost and found things. Losing things is very common for us, which made me to start this project :)
-> Things that are left to do further:
-  > Add an optionality to delete a lost or found form (only when the user is logged in)
-  > Add a comments session (in lost things list and found things list page) wherein people can specify whose thing it is (if they know)
-  > Make an email verification while registering
-> and so on... Please edit this if you got any new feature idea :)
-
 
 ## Install
 1.Install venv
