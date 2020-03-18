@@ -36,6 +36,10 @@ python manage.py runserver
 ```
 2.You can access the website in your <a href="http://127.0.0.1:8000/">local host!</a>
 
+## Reference
+You can refer here (to get a sense of how it looks like):
+https://youtu.be/iOPF6ADR7R8
+
 ## Author
 
 👤 **Sri Harsha G**
