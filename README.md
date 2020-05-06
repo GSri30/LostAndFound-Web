@@ -47,6 +47,11 @@ https://youtu.be/iOPF6ADR7R8
 * Website: https://gsri30.github.io/
 * Github: [@GSri30](https://github.com/GSri30)
 
+## 📝 License
+
+This project is [MIT License](https://github.com/GSri30/LostAndFound-Web/blob/master/LICENSE) licensed.
+
+
 ## Show your support
 
 Give a ⭐️ if this project helped you!
