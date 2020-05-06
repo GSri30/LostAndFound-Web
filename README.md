@@ -49,7 +49,7 @@ https://youtu.be/iOPF6ADR7R8
 
 ## 📝 License
 
-This project is [MIT License](https://github.com/GSri30/LostAndFound-Web/blob/master/LICENSE) licensed.
+This project is [MIT licensed](https://github.com/GSri30/LostAndFound-Web/blob/master/LICENSE).
 
 
 ## Show your support
